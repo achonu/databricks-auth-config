@@ -1,0 +1,11 @@
+configs = {"fs.azure.account.auth.type": "OAuth",
+"fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+"fs.azure.account.oauth2.client.id": "f3b0ad24-04de-48af-bc68-35e482f5d72e",
+"fs.azure.account.oauth2.client.secret": '7jD8Q~3NZLgTbnqRiJWNJDsTozUpvyZtIgwJPajf',
+"fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/67bda7ee-fd80-41ef-ac91-358418290a1e/oauth2/token"}
+
+
+dbutils.fs.mount(
+source = "abfss://{storage_account_container_name}@{storage_account_name}.dfs.core.windows.net",
+mount_point = "/mnt/{name_of_folder}",
+extra_configs = configs)
